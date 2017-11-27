@@ -603,7 +603,7 @@ write-output $a
 echo "1.1.3.6.6 Set 'Domain member: Require strong (Windows 2000 or later) session key' to 'Enabled'" 
 echo "Domain member: Require strong session key" >> audit.txt
 $a = " Require strong session key  -----------> "
-$b = reg query "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Netlogon\Parameters" | findstr /i "requierstrong"
+$b = reg query "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Netlogon\Parameters" | findstr /i "requirestrong"
 $a += if ($b -match "0x1" ) {echo "compliance"} else {echo "Non compliance"}
 write-output $a
 
@@ -617,14 +617,14 @@ write-output $a
 echo "1.1.3.7.2 Configure 'Interactive logon: Message text for users attempting to log on'" 
 echo "Interactive logon: Message text for users attempting to log on'" >> audit.txt
 $a = "Interactive logon: Message text for users attempting to log on'  -----------> "
-$b = reg query "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System" | findstr /i "legalnocticetext"
+$b = reg query "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System" | findstr /i "legalnoticetext"
 $a += if ($b -match "****") {echo "compliance"} else {echo "Non compliance"}
 write-output $a
 
 echo "1.1.3.7.3 Configure 'Interactive logon: Message title for users attempting to log on'" 
 echo "Interactive logon: Message title for users attempting to log on" >> audit.txt
 $a = "Interactive logon: Message title for users attempting to log on  -----------> "
-$b = reg query "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System" | findstr /i "legalnocticeCaption"
+$b = reg query "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System" | findstr /i "legalnoticeCaption"
 $a += if ($b -match "Warning") {echo "compliance"} else {echo "Non compliance"}
 write-output $a
 
