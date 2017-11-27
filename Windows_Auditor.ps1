@@ -103,384 +103,313 @@ $a += if ($b -match "No Auditing") {echo "compliance"} else {echo "Non complianc
 write-output $a
 
 echo "1.1.2.5 Set 'Audit Policy: Account Management: Application Group Management' to 'No Auditing'" 
-echo "'Audit Policy: Account Management: Application Group Management' to 'No Auditing'" >> audit.txt
-$a = "Account Management: Application Group Management-----------> "
-$b = auditpol /get /category:* | findstr /i /c:""
-$a += if ($b -match "No Auditing") {echo "compliance"} else {echo "Non compliance this value should be No Auditing"}
-write-output $a
-
-echo "1.1.2.4 Set 'Audit Policy: Account Logon: Other Account Logon Events' to 'No Auditing'" 
-echo "'Audit Policy: Account Logon: Other Account Logon Events' to 'No Auditing'" >> audit.txt
-$a = " Account Logon: Other Account Logon Events -----------> "
-$b = auditpol /get /category:* | findstr /i /c:"Other Account Logon"
-$a += if ($b -match "No Auditing") {echo "compliance"} else {echo "Non compliance this value should be No Auditing"}
-write-output $a
-
-
-echo "1.1.2.5 Set 'Audit Policy: Account Management: Application Group Management' to 'No Auditing'" 
 echo "Audit Policy: Account Management: Application Group Management"' to 'No Auditing" >> audit.txt
 $a = " Account Management: Application Group Management -----------> "
 $b = auditpol /get /category:* | findstr /i /c:"Application Group Management"
 $a += if ($b -match "No Auditing") {echo "compliance"} else {echo "Non compliance this value should be No Auditing"}
 write-output $a
-
-
 echo "1.1.2.7 Set 'Audit Policy: Account Management: Distribution Group Management' to 'No Auditing'" 
 echo "Audit Policy: Account Management: Distribution Group Management" >> audit.txt
 $a = " Account Management: Distribution Group Management-----------> "
 $b = auditpol /get /category:* | findstr /i /c:"Computer Account Management"
 $a += if ($b -match "No Auditing") {echo "compliance"} else {echo "Non compliance this value should be No Auditing"}
 write-output $a
-
 echo "1.1.2.8 Set 'Audit Policy: Account Management: Other Account Management Events' to 'Success and Failure'" 
 echo "Audit Policy: Account Management: Other Account Management Events" >> audit.txt
 $a = " Account Management: Other Account Management Events-----------> "
 $b = auditpol /get /category:* | findstr /i /c:"Computer Account Management"
 $a += if ($b -match "Success and Failure") {echo "compliance"} else {echo "Non compliance this value should be Success and Failure"}
 write-output $a
-
-
 echo "1.1.2.9 Set 'Audit Policy: Account Management: Security Group Management' to 'Success and Failure'" 
 echo "Audit Policy: Account Management: Security Group Management" >> audit.txt
 $a = " Account Management: Security Group Management-----------> "
 $b = auditpol /get /category:* | findstr /i /c:"Security Group Management"
 $a += if ($b -match "Success and Failure") {echo "compliance"} else {echo "Non compliance this value should be Success and Failure"}
 write-output $a
-
 echo "1.1.2.10 Set 'Audit Policy: Account Management: User Account Management' to 'Success and Failure'" 
 echo "Audit Policy: Account Management: User Account Management" >> audit.txt
 $a = " Account Management: User Account Management-----------> "
 $b = auditpol /get /category:* | findstr /i /c:"User Account Management"
 $a += if ($b -match "Success and Failure") {echo "compliance"} else {echo "Non compliance this value should be Success and Failure"}
 write-output $a
-
 echo "1.1.2.11 Set 'Audit Policy: Detailed Tracking: DPAPI Activity' to 'No Auditing'" 
 echo "Audit Policy: Detailed Tracking: DPAPI Activity" >> audit.txt
 $a = " Detailed Tracking: DPAPI Activity-----------> "
 $b = auditpol /get /category:* | findstr /i /c:"DPAPI Activity"
 $a += if ($b -match "No Auditing") {echo "compliance"} else {echo "Non compliance this value should be No Auditing"}
 write-output $a
-
 echo "1.1.2.12 Set 'Audit Policy: Detailed Tracking: Process Creation' to 'Success'" 
 echo "Audit Policy: Detailed Tracking: Process Creation" >> audit.txt
 $a = " Detailed Tracking: Process Creation-----------> "
 $b = auditpol /get /category:* | findstr /i /c:"DPAPI Activity"
 $a += if ($b -match "Success") {echo "compliance"} else {echo "Non compliance this value should be Success"}
 write-output $a
-
 echo "1.1.2.13 Set 'Audit Policy: Detailed Tracking: Process Termination' to 'No Auditing'" 
 echo "Audit Policy: Detailed Tracking: Process Termination" >> audit.txt
 $a = " Detailed Tracking: Process Termination-----------> "
 $b = auditpol /get /category:* | findstr /i /c:"Process Termination"
 $a += if ($b -match "No Auditing") {echo "compliance"} else {echo "Non compliance this value should be No Auditing"}
 write-output $a
-
 echo "1.1.2.14 Set 'Audit Policy: Detailed Tracking: RPC Events' to 'No Auditing'" 
 echo "Audit Policy: Detailed Tracking: RPC Events" >> audit.txt
 $a = " Detailed Tracking: RPC Events-----------> "
 $b = auditpol /get /category:* | findstr /i /c:"RPC Events"
 $a += if ($b -match "No Auditing") {echo "compliance"} else {echo "Non compliance this value should be No Auditing"}
 write-output $a
-
 echo "1.1.2.15 Set 'Audit Policy: DS Access: Detailed Directory Service Replication' to 'No Auditing'" 
 echo "Audit Policy: DS Access: Detailed Directory Service Replication" >> audit.txt
 $a = " DS Access: Detailed Directory Service Replication-----------> "
 $b = auditpol /get /category:* | findstr /i /c:"Detailed Directory Service Replication"
 $a += if ($b -match "No Auditing") {echo "compliance"} else {echo "Non compliance this value should be No Auditing"}
 write-output $a
-
 echo "1.1.2.16 Set 'Audit Policy: DS Access: Directory Service Access' to 'Success and Failure'" 
 echo "Audit Policy: DS Access: Directory Service Access" >> audit.txt
 $a = " DS Access: Directory Service Access-----------> "
 $b = auditpol /get /category:* | findstr /i /c:"Directory Service Access"
 $a += if ($b -match "Success and Failure") {echo "compliance"} else {echo "Non compliance this value should be Success and Failure"}
 write-output $a
-
 echo "1.1.2.16 Set 'Audit Policy: DS Access: Directory Service Access' to 'Success and Failure'" 
 echo "Audit Policy: DS Access: Directory Service Access" >> audit.txt
 $a = " DS Access: Directory Service Access-----------> "
 $b = auditpol /get /category:* | findstr /i /c:"Directory Service Access"
 $a += if ($b -match "Success and Failure") {echo "compliance"} else {echo "Non compliance this value should be Success and Failure"}
 write-output $a
-
 echo "1.1.2.17 Set 'Audit Policy: DS Access: Directory Service Changes' to 'Success and Failure'" 
 echo "Audit Policy: DS Access: Directory Service Changes" >> audit.txt
 $a = " DS Access: Directory Service Changes-----------> "
 $b = auditpol /get /category:* | findstr /i /c:"Directory Service Changes"
 $a += if ($b -match "Success and Failure") {echo "compliance"} else {echo "Non compliance this value should be Success and Failure"}
 write-output $a
-
 echo "1.1.2.18 Set 'Audit Policy: DS Access: Directory Service Replication' to 'No Auditing'" 
 echo "Audit Policy: DS Access: Directory Service Replication" >> audit.txt
 $a = " DS Access: Directory Service Replication-----------> "
 $b = auditpol /get /category:* | findstr /i /c:"Directory Service Replication"
 $a += if ($b -match "No Auditing") {echo "compliance"} else {echo "Non compliance this value should be No Auditing"}
 write-output $a
-
 echo "1.1.2.19 Set 'Audit Policy: Logon-Logoff: Account Lockout' to 'No Auditing'" 
 echo "Audit Policy: Logon-Logoff: Account Lockout' to 'No Auditing" >> audit.txt
 $a = " Logon-Logoff: Account Lockout-----------> "
 $b = auditpol /get /category:* | findstr /i /c:"Account Lockout"
 $a += if ($b -match "No Auditing") {echo "compliance"} else {echo "Non compliance this value should be No Auditing"}
 write-output $a
-
 echo "1.1.2.20 Set 'Audit Policy: Logon-Logoff: IPsec Extended Mode' to 'No Auditing'" 
 echo "Audit Policy: Logon-Logoff: IPsec Extended Mode' to 'No Auditing" >> audit.txt
 $a = " Logon-Logoff: Account Lockout-----------> "
 $b = auditpol /get /category:* | findstr /i /c:"IPsec Extended Mode"
 $a += if ($b -match "No Auditing") {echo "compliance"} else {echo "Non compliance this value should be No Auditing"}
 write-output $a
-
 echo "1.1.2.22 Set 'Audit Policy: Logon-Logoff: IPsec Quick Mode' to 'No Auditing'" 
 echo "Audit Policy: Logon-Logoff: IPsec Quick Mode' to 'No Auditing" >> audit.txt
 $a = " Logon-Logoff: IPsec Quick Mode-----------> "
 $b = auditpol /get /category:* | findstr /i /c:"IPsec Quick Mode"
 $a += if ($b -match "No Auditing") {echo "compliance"} else {echo "Non compliance this value should be No Auditing"}
 write-output $a
-
 echo "1.1.2.23 Set 'Audit Policy: Logon-Logoff: Logoff' to 'Success'" 
 echo "Audit Policy: Logon-Logoff: Logoff' to 'Success" >> audit.txt
 $a = " Logon-Logoff: Logoff>----------->> "
 $b = auditpol /get /category:* | findstr /i /c:"Logoff"
 $a += if ($b -match "Success") {echo "compliance"} else {echo "Non compliance this value should be Success"}
 write-output $a
-
 echo "1.1.2.24 Set 'Audit Policy: Logon-Logoff: Logon' to 'Success and Failure'" 
 echo "Audit Policy: Logon-Logoff: Logon' to 'Success" >> audit.txt
 $a = " Logon-Logoff: Logon>----------->> "
 $b = auditpol /get /category:* | findstr /i /c:"Logon"
 $a += if ($b -match "Success and Failure") {echo "compliance"} else {echo "Non compliance this value should be Success and Failure"}
 write-output $a
-
 echo "1.1.2.25 Set 'Audit Policy: Logon-Logoff: Network Policy Server' to 'No Auditing'" 
 echo "Audit Policy: Logon-Logoff: Network Policy Server' to 'No Auditing" >> audit.txt
 $a = " Logon-Logoff: Network Policy Server-----------> "
 $b = auditpol /get /category:* | findstr /i /c:"Network Policy Server"
 $a += if ($b -match "No Auditing") {echo "compliance"} else {echo "Non compliance this value should be No Auditing"}
 write-output $a
-
 echo "1.1.2.26 Set 'Audit Policy: Logon-Logoff: Other Logon/Logoff Events' to 'No Auditing'" 
 echo "Audit Policy: Logon-Logoff: Other Logon/Logoff Events' to 'No Auditing" >> audit.txt
 $a = " Logon-Logoff: Other Logon/Logoff Events-----------> "
 $b = auditpol /get /category:* | findstr /i /c:"Other Logon/Logoff Events"
 $a += if ($b -match "No Auditing") {echo "compliance"} else {echo "Non compliance this value should be No Auditing"}
 write-output $a
-
 echo "1.1.2.27 Set 'Audit Policy: Logon-Logoff: Special Logon' to 'Success'" 
 echo "Audit Policy: Logon-Logoff: Special Logon' to 'Success" >> audit.txt
 $a = " Logon-Logoff: Special Logon-----------> "
 $b = auditpol /get /category:* | findstr /i /c:"Special Logon"
 $a += if ($b -match "Success") {echo "compliance"} else {echo "Non compliance this value should be Success"}
 write-output $a
-
 echo "1.1.2.27 Set 'Audit Policy: Logon-Logoff: Special Logon' to 'Success'" 
 echo "Audit Policy: Logon-Logoff: Special Logon' to 'Success" >> audit.txt
 $a = " Logon-Logoff: Special Logon-----------> "
 $b = auditpol /get /category:* | findstr /i /c:"Special Logon"
 $a += if ($b -match "Success") {echo "compliance"} else {echo "Non compliance this value should be Success"}
 write-output $a
-
 echo "1.1.2.28 Set 'Audit Policy: Object Access: Application Generated' to 'No Auditing'" 
 echo "Audit Policy: Object Access: Application Generated'' to 'No Auditing" >> audit.txt
 $a = " Object Access: Application Generated'-----------> "
 $b = auditpol /get /category:* | findstr /i /c:"Application Generated"
 $a += if ($b -match "No Auditing") {echo "compliance"} else {echo "Non compliance this value should be No Auditing"}
 write-output $a
-
 echo "1.1.2.29 Set 'Audit Policy: Object Access: Central Access Policy Staging' to 'No Auditing'" 
 echo "Audit Policy: Object Access: Central Access Policy Staging' to 'No Auditing" >> audit.txt
 $a = " Object Access: Central Access Policy Staging'-----------> "
 $b = auditpol /get /category:* | findstr /i /c:"Central Access Policy Staging"
 $a += if ($b -match "No Auditing") {echo "compliance"} else {echo "Non compliance this value should be No Auditing"}
 write-output $a
-
 echo "1.1.2.30 Set 'Audit Policy: Object Access: Certification Services' to 'No Auditing'" 
 echo "Audit Policy: Object Access: Certification Services' to 'No Auditing" >> audit.txt
 $a = " Object Access: Central Certification Services-----------> "
 $b = auditpol /get /category:* | findstr /i /c:"Certification Services"
 $a += if ($b -match "No Auditing") {echo "compliance"} else {echo "Non compliance this value should be No Auditing"}
 write-output $a
-
 echo "1.1.2.31 Set 'Audit Policy: Object Access: Detailed File Share' to 'No Auditing'" 
 echo "Audit Policy: Object Access: Detailed File Share' to 'No Auditing" >> audit.txt
 $a = " Object Access: Detailed File Share-----------> "
 $b = auditpol /get /category:* | findstr /i /c:"Detailed File Share"
 $a += if ($b -match "No Auditing") {echo "compliance"} else {echo "Non compliance this value should be No Auditing"}
 write-output $a
-
 echo "1.1.2.32 Set 'Audit Policy: Object Access: File Share' to 'No Auditing'" 
 echo "Audit Policy: Object Access: File Share' to 'No Auditing" >> audit.txt
 $a = " Object Access: File Share-----------> "
 $b = auditpol /get /category:* | findstr /i /c:"  File Share"
 $a += if ($b -match "No Auditing") {echo "compliance"} else {echo "Non compliance this value should be No Auditing"}
 write-output $a
-
 echo "1.1.2.33 Set 'Audit Policy: Object Access: File System' to 'No Auditing'" 
 echo "Audit Policy: Object Access: File System to 'No Auditing" >> audit.txt
 $a = " Object Access: File System-----------> "
 $b = auditpol /get /category:* | findstr /i /c:"File System"
 $a += if ($b -match "No Auditing") {echo "compliance"} else {echo "Non compliance this value should be No Auditing"}
 write-output $a
-
 echo "1.1.2.34 Set 'Audit Policy: Object Access: Filtering Platform Connection' to 'No Auditing'" 
 echo "Audit Policy: Object Access: Filtering Platform Connection to 'No Auditing" >> audit.txt
 $a = " Object Access: Filtering Platform Connection-----------> "
 $b = auditpol /get /category:* | findstr /i /c:"Filtering Platform Connection"
 $a += if ($b -match "No Auditing") {echo "compliance"} else {echo "Non compliance this value should be No Auditing"}
 write-output $a
-
-
 echo "1.1.2.35 Set 'Audit Policy: Object Access: Filtering Platform Packet Drop' to 'No Auditing'" 
 echo "Audit Policy: Object Access: Filtering Platform Packet Drop to 'No Auditing" >> audit.txt
 $a = " Object Access: Filtering Platform Packet Drop-----------> "
 $b = auditpol /get /category:* | findstr /i /c:"Filtering Platform Packet Drop"
 $a += if ($b -match "No Auditing") {echo "compliance"} else {echo "Non compliance this value should be No Auditing"}
 write-output $a
-
 echo "1.1.2.36 Set 'Audit Policy: Object Access: Handle Manipulation' to 'No Auditing'" 
 echo "Audit Policy: Object Access: Handle Manipulation to 'No Auditing" >> audit.txt
 $a = " Object Access: Handle Manipulation-----------> "
 $b = auditpol /get /category:* | findstr /i /c:"Handle Manipulation"
 $a += if ($b -match "No Auditing") {echo "compliance"} else {echo "Non compliance this value should be No Auditing"}
 write-output $a
-
 echo "1.1.2.37 Set 'Audit Policy: Object Access: Kernel Object' to 'No Auditing'" 
 echo "Audit Policy: Object Access: Kernel Object to 'No Auditing" >> audit.txt
 $a = " Object Access: Kernel Object-----------> "
 $b = auditpol /get /category:* | findstr /i /c:"Kernel Object"
 $a += if ($b -match "No Auditing") {echo "compliance"} else {echo "Non compliance this value should be No Auditing"}
 write-output $a
-
 echo "1.1.2.38 Set 'Audit Policy: Object Access: Other Object Access Events' to 'No Auditing'" 
 echo "Audit Policy: Object Access: Other Object Access Events to 'No Auditing" >> audit.txt
 $a = " Object Access: Other Object Access Events-----------> "
 $b = auditpol /get /category:* | findstr /i /c:"Other Object Access Events"
 $a += if ($b -match "No Auditing") {echo "compliance"} else {echo "Non compliance this value should be No Auditing"}
 write-output $a
-
 echo "1.1.2.39 Set 'Audit Policy: Object Access: Registry' to 'No Auditing'" 
 echo "Audit Policy: Object Access: Registry to 'No Auditing" >> audit.txt
 $a = " Object Access: Registry-----------> "
 $b = auditpol /get /category:* | findstr /i /c:"Registry"
 $a += if ($b -match "No Auditing") {echo "compliance"} else {echo "Non compliance this value should be No Auditing"}
 write-output $a
-
 echo "1.1.2.40 Set 'Audit Policy: Object Access: Removable Storage' to 'No Auditing'" 
 echo "Audit Policy: Object Access: Removable Storage to 'No Auditing" >> audit.txt
 $a = " Object Access: Removable Storage-----------> "
 $b = auditpol /get /category:* | findstr /i /c:"Removable Storage"
 $a += if ($b -match "No Auditing") {echo "compliance"} else {echo "Non compliance this value should be No Auditing"}
 write-output $a
-
 echo "1.1.2.41 Set 'Audit Policy: Object Access: SAM to 'No Auditing'" 
 echo "Audit Policy: Object Access: SAM to 'No Auditing" >> audit.txt
 $a = " Object Access: SAM-----------> "
 $b = auditpol /get /category:* | findstr /i /c:"SAM"
 $a += if ($b -match "No Auditing") {echo "compliance"} else {echo "Non compliance this value should be No Auditing"}
 write-output $a
-
 echo "1.1.2.42 Set 'Audit Policy: Policy Change: Audit Policy Change' to 'Success and Failure'" 
 echo "Audit Policy: Policy Change: Audit Policy Change to 'No Auditing" >> audit.txt
 $a = " Policy Change: Audit Policy Change-----------> "
 $b = auditpol /get /category:* | findstr /i /c:"Audit Policy Change"
 $a += if ($b -match "Success and Failure") {echo "compliance"} else {echo "Non compliance this value should be Success and Failure"}
 write-output $a
-
 echo "1.1.2.43 Set 'Audit Policy: Policy Change: Authentication Policy Change' to 'Success'" 
 echo "Audit Policy: Policy Change: Authentication Policy Change to 'No Auditing'" >> audit.txt
 $a = " Policy Change: Audit Policy Change-----------> "
 $b = auditpol /get /category:* | findstr /i /c:"Authentication Policy Change"
 $a += if ($b -match "Success") {echo "compliance"} else {echo "Non compliance this value should be Success"}
 write-output $a
-
 echo "1.1.2.44 Set 'Audit Policy: Policy Change: Authorization Policy Change' to 'No Auditing'" 
 echo "Audit Policy: Policy Change: Authorization Policy Change to 'No Auditing'" >> audit.txt
 $a = " Policy Change: Authorization Policy Change-----------> "
 $b = auditpol /get /category:* | findstr /i /c:"Authorization Policy Change"
 $a += if ($b -match "No Auditing") {echo "compliance"} else {echo "Non compliance this value should be No Auditing"}
 write-output $a
-
 echo "1.1.2.45 Set 'Audit Policy: Policy Change: Filtering Platform Policy Change' to 'No Auditing'" 
 echo "Audit Policy: Policy Change: Filtering Platform Policy Change to 'No Auditing'" >> audit.txt
 $a = " Policy Change: Filtering Platform Policy Change-----------> "
 $b = auditpol /get /category:* | findstr /i /c:"Filtering Platform Policy Change"
 $a += if ($b -match "No Auditing") {echo "compliance"} else {echo "Non compliance this value should be No Auditing"}
 write-output $a
-
 echo "1.1.2.46 Set 'Audit Policy: Policy Change: MPSSVC Rule-Level Policy Change' to 'No Auditing'" 
 echo "Audit Policy: Policy Change: MPSSVC Rule-Level Policy Change to 'No Auditing'" >> audit.txt
 $a = " Policy Change: MPSSVC Rule-Level Policy Change-----------> "
 $b = auditpol /get /category:* | findstr /i /c:"MPSSVC Rule-Level Policy Change"
 $a += if ($b -match "No Auditing") {echo "compliance"} else {echo "Non compliance this value should be No Auditing"}
 write-output $a
-
 echo "1.1.2.47 Set 'Audit Policy: Policy Change: Other Policy Change Events' to 'No Auditing'" 
 echo "Audit Policy: Policy Change: Other Policy Change Events to 'No Auditing'" >> audit.txt
 $a = " Policy Change: Other Policy Change Events-----------> "
 $b = auditpol /get /category:* | findstr /i /c:"Other Policy Change Events"
 $a += if ($b -match "No Auditing") {echo "compliance"} else {echo "Non compliance this value should be No Auditing"}
 write-output $a
-
 echo "1.1.2.48 Set 'Audit Policy: Privilege Use: Non Sensitive Privilege Use' to 'No Auditing'" 
 echo "Audit Policy: Privilege Use: Non Sensitive Privilege Use to 'No Auditing'" >> audit.txt
 $a = "Privilege Use: Non Sensitive Privilege Use -----------> "
 $b = auditpol /get /category:* | findstr /i /c:"Non Sensitive Privilege Use"
 $a += if ($b -match "No Auditing") {echo "compliance"} else {echo "Non compliance this value should be No Auditing"}
 write-output $a
-
 echo "1.1.2.49 Set 'Audit Policy: Privilege Use: Other Privilege Use Events' to 'No Auditing'" 
 echo "Audit Policy: Privilege Use: Other Privilege Use Events to 'No Auditing'" >> audit.txt
 $a = "Privilege Use: Other Privilege Use Events -----------> "
 $b = auditpol /get /category:* | findstr /i /c:"Other Privilege Use Events"
 $a += if ($b -match "No Auditing") {echo "compliance"} else {echo "Non compliance this value should be No Auditing"}
 write-output $a
-
 echo "1.1.2.50 Set 'Audit Policy: Privilege Use: Sensitive Privilege Use' to 'Success and Failure'" 
 echo "Audit Policy: Privilege Use: Sensitive Privilege Use to 'No Auditing'" >> audit.txt
 $a = "Privilege Use: Sensitive Privilege Use -----------> "
 $b = auditpol /get /category:* | findstr /i /c:"Sensitive Privilege Use"
 $a += if ($b -match "Success and Failure") {echo "compliance"} else {echo "Non compliance this value should be Success and Failure"}
 write-output $a
-
 echo "1.1.2.51 Set 'Audit Policy: System: IPsec Driver' to 'Success and Failure'" 
 echo "Audit Policy: System: IPsec Driver' to 'Success and Failure'" >> audit.txt
 $a = "System: IPsec Driver -----------> "
 $b = auditpol /get /category:* | findstr /i /c:"IPsec Driver"
 $a += if ($b -match "Success and Failure") {echo "compliance"} else {echo "Non compliance this value should be Success and Failure"}
 write-output $a
-
 echo "1.1.2.52 Set 'Audit Policy: System: Other System Events' to 'No Auditing'" 
 echo "Audit Policy: System: Other System Events' to ''No Auditing'" >> audit.txt
 $a = "System: Other System Events>----------->> "
 $b = auditpol /get /category:* | findstr /i /c:"Other System Events"
 $a += if ($b -match "No Auditing") {echo "compliance"} else {echo "Non compliance this value should be No Auditing"}
 write-output $a
-
 echo "1.1.2.53 Set 'Audit Policy: System: Security State Change' to 'Success and Failure'" 
 echo "Audit Policy: System: Security State Change' to 'Success and Failure'" >> audit.txt
 $a = "System: Security State Change-----------> "
 $b = auditpol /get /category:* | findstr /i /c:"Other System Events"
 $a += if ($b -match "No Auditing") {echo "compliance"} else {echo "Non compliance this value should be No Auditing"}
 write-output $a
-
 echo "1.1.2.54 Set 'Audit Policy: System: Security System Extension' to 'Success and Failure'" 
 echo "Audit Policy: System: Security System Extension' to 'Success and Failure'" >> audit.txt
 $a = "System: Security System Extension-----------> "
 $b = auditpol /get /category:* | findstr /i /c:"Security System Extension"
 $a += if ($b -match "No Auditing") {echo "compliance"} else {echo "Non compliance this value should be No Auditing"}
 write-output $a
-
 echo "1.1.2.55 Set 'Audit Policy: System: System Integrity' to 'Success and Failure'" 
 echo "Audit Policy: System: System Integrity' to 'Success and Failure'" >> audit.txt
 $a = "System: System Integrity>----------->> "
 $b = auditpol /get /category:* | findstr /i /c:"System Integrity"
 $a += if ($b -match "No Auditing") {echo "compliance"} else {echo "Non compliance this value should be No Auditing"}
 write-output $a
-
 echo "1.1.3 Security Options"
-
 echo "Major 1.1.3 Security Options" >> audit.txt
-
 echo ""Minor 1.1.3.1 Accounts" >> audit.txt
 
 echo "Checking for Security Options"
